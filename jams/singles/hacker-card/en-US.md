@@ -190,7 +190,11 @@ Zooooming in, we see that it's between the antenna loop and pin #8 on the NFC ch
 
 Now, your PCB card is functional. Woooo! 🎉
 
-_WARNING: Make sure your design has no short circuits_
+> [!WARNING]
+> Make sure your design has no short circuits
+
+> [!WARNING]
+> Ensure your trace length doesn't exceed 40mm at 0.254mm width, or consider increasing the trace thickness to 0.8mm. Use the KiCad Calculator Tool app and in the "Track Width" section, ensure you have a total combined voltage drop of less than 0.3V.
 <Dropdown title="Hey, what's a short circuit and how can I prevent it?">  
            Short circuits is a circuits that allow current to travel along an unintended path. 
 
