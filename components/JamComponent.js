@@ -597,6 +597,63 @@ export default function JamComponent({ jam, jamsContent }) {
               sx={{ fontSize: 18, lineHeight: '200%', pb: [32, 32], mt: '1rem' }}>
               <MDXRemote components={mdxComponents} {...jam.source} />
             </Box>
+            {jam.slug !== 'bakebuild' && (
+        <div
+          style={{
+            border: '2px solid rgba(0, 0, 0, 0.25)',
+            boxShadow: '0px 0px 24px 0px rgba(153, 60, 207, 0.50)',
+            backgroundColor: '#E1E6EC',
+            display: 'flex',
+            flexDirection: 'column',
+            padding: '24px 24px',
+            borderRadius: '16px'
+          }}>
+          <Text
+            sx={{
+              color: '#993CCF',
+              fontSize: 32,
+              lineHeight: 1.125,
+              fontWeight: 700
+            }}>
+            You finished the Jam. <br />
+            Congratulations! 🎉 🎉 🎉
+          </Text>
+
+          <Text sx={{ mt: 3 }}>
+            Share your final project with the community
+          </Text>
+          <Box sx={{ marginTop: '8px', width: ['100%', '100%', '75%'] }}>
+            <Text>Project Name</Text>
+            <Input
+              placeholder={'MarshaMellow - SwampLofiAnimation'}
+              value={projectName}
+              onChange={e => setProjectName(e.target.value)}
+            />
+          </Box>
+          <Box sx={{ marginTop: '8px', width: ['100%', '100%', '75%'] }}>
+            <Text>Project URL</Text>
+            <Input
+              placeholder={'https://swamplofi.marshamellow.repl.co/'}
+              value={submissionURL}
+              onChange={e => setSubmissionURL(e.target.value)}
+            />
+          </Box>
+
+          <Button
+            sx={{
+              marginTop: '24px',
+              borderRadius: '12px',
+              padding: '12px',
+              backgroundColor: '#993CCF',
+              width: ['100%', '100%', '50%']
+            }}
+            onClick={() => submitProject()}
+          >
+            Share Project with Community
+          </Button>
+          <p>{apiResponse}</p>
+        </div>
+      )}
            </div>
   
           <div sx={{ width: ['auto', 'auto', '20rem'], position: 'relative' }}>
@@ -1301,62 +1358,63 @@ export default function JamComponent({ jam, jamsContent }) {
               sx={{ fontSize: 18, lineHeight: '200%', pb: [32, 32], mt: '1rem' }}>
               <MDXRemote components={mdxComponents} {...jam.source} />
             </Box>
-  
-            <Box
-              style={{
-                border: '2px solid rgba(0, 0, 0, 0.25)',
-                boxShadow: '0px 0px 24px 0px rgba(153, 60, 207, 0.50)',
-                backgroundColor: '#E1E6EC',
-                display: 'flex',
-                flexDirection: 'column',
-                padding: '24px 24px',
-                borderRadius: '16px'
-              }}>
-              <Text
-                sx={{
-                  color: '#993CCF',
-                  fontSize: 32,
-                  lineHeight: 1.125,
-                  fontWeight: 700
-                }}>
-                You finished the Jam. <br />
-                Congratulations! 🎉 🎉 🎉
-              </Text>
-  
-              <Text sx={{ mt: 3 }}>
-                Share your final project with the community
-              </Text>
-              <Box sx={{ marginTop: '8px', width: ['100%', '100%', '75%'] }}>
-                <Text>Project Name</Text>
-                <Input
-                  placeholder={'MarshaMellow - SwampLofiAnimation'}
-                  value={projectName}
-                  onChange={e => setProjectName(e.target.value)}
-                />
-              </Box>
-              <Box sx={{ marginTop: '8px', width: ['100%', '100%', '75%'] }}>
-                <Text>Project URL</Text>
-                <Input
-                  placeholder={'https://swamplofi.marshamellow.repl.co/'}
-                  value={submissionURL}
-                  onChange={e => setSubmissionURL(e.target.value)}
-                />
-              </Box>
-  
-              <Button
-                sx={{
-                  marginTop: '24px',
-                  borderRadius: '12px',
-                  padding: '12px',
-                  backgroundColor: '#993CCF',
-                  width: ['100%', '100%', '50%']
-                }}
-                onClick={() => submitProject()
-                }>
-                Share Project with Community
-              </Button>
-              <p>{apiResponse}</p>
-            </Box>
+            {jam.slug !== 'bakebuild' && (
+        <div
+          style={{
+            border: '2px solid rgba(0, 0, 0, 0.25)',
+            boxShadow: '0px 0px 24px 0px rgba(153, 60, 207, 0.50)',
+            backgroundColor: '#E1E6EC',
+            display: 'flex',
+            flexDirection: 'column',
+            padding: '24px 24px',
+            borderRadius: '16px'
+          }}>
+          <Text
+            sx={{
+              color: '#993CCF',
+              fontSize: 32,
+              lineHeight: 1.125,
+              fontWeight: 700
+            }}>
+            You finished the Jam. <br />
+            Congratulations! 🎉 🎉 🎉
+          </Text>
+
+          <Text sx={{ mt: 3 }}>
+            Share your final project with the community
+          </Text>
+          <Box sx={{ marginTop: '8px', width: ['100%', '100%', '75%'] }}>
+            <Text>Project Name</Text>
+            <Input
+              placeholder={'MarshaMellow - SwampLofiAnimation'}
+              value={projectName}
+              onChange={e => setProjectName(e.target.value)}
+            />
+          </Box>
+          <Box sx={{ marginTop: '8px', width: ['100%', '100%', '75%'] }}>
+            <Text>Project URL</Text>
+            <Input
+              placeholder={'https://swamplofi.marshamellow.repl.co/'}
+              value={submissionURL}
+              onChange={e => setSubmissionURL(e.target.value)}
+            />
+          </Box>
+
+          <Button
+            sx={{
+              marginTop: '24px',
+              borderRadius: '12px',
+              padding: '12px',
+              backgroundColor: '#993CCF',
+              width: ['100%', '100%', '50%']
+            }}
+            onClick={() => submitProject()}
+          >
+            Share Project with Community
+          </Button>
+          <p>{apiResponse}</p>
+        </div>
+      )}
           </div>
   
           <div sx={{ width: ['auto', 'auto', '20rem'], position: 'relative' }}>
